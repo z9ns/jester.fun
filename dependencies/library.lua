@@ -14982,7 +14982,9 @@ function Xan:CreateWindow(config)
                     return "None"
                 end
                 local name = tostring(key):gsub("Enum.KeyCode.", "")
-                return name
+                local altname = tostring(name):gsub("Enum.UserInputType.", "")
+                
+                return altname
             end
             
             local keyBtn = Util.Create("TextButton", {
