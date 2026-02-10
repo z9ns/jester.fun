@@ -20545,7 +20545,7 @@ function Xan:CreateWindow(config)
 				Position = UDim2.new(0, 0, 0, 0),
 				Size = UDim2.new(0, 0, 1, 0),
 				Font = Enum.Font.Roboto,
-				Text = gameName,
+				Text = "<b>"..gameName.."</b>",
 				TextColor3 = Xan.CurrentTheme.Text,
 				TextSize = (IsMobile and 17) or (isCompact and 15) or 16,
 				TextXAlignment = Enum.TextXAlignment.Left,
@@ -20554,8 +20554,8 @@ function Xan:CreateWindow(config)
 			})
 
 			local function createBadge(text, color, order)
-				local charWidth = isCompact and 5 or 6
-				local padding = isCompact and 10 or 14
+				local charWidth = isCompact and 4 or 5
+				local padding = isCompact and 9 or 13
 				local badgeWidth = #text * charWidth + padding
 
 				local badge = Util.Create("Frame", {
@@ -20640,7 +20640,7 @@ function Xan:CreateWindow(config)
 				Position = UDim2.new(1, -82, 0.5, -16),
 				Size = UDim2.new(0, 70, 0, 32),
 				Font = Enum.Font.Roboto,
-				Text = isMaintenance and "<b>OFFLINE</b>" or "<b>LOAD</b>",
+				Text = isMaintenance and "<b>Offline</b>" or "<b>Load</b>",
 				TextColor3 = Color3.new(1, 1, 1),
 				TextSize = IsMobile and 13 or 12,
 				AutoButtonColor = false,
