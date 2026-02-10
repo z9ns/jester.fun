@@ -651,6 +651,12 @@ local Util = {}
 
 function Util.Create(class, props, children)
 	local obj = Instance.new(class)
+
+	local success, rt = pcall(function() return obj.RichText end)
+		if success and rt ~= nil then
+		obj.RichText = true
+	end
+
 	for k, v in pairs(props or {}) do
 		if k ~= "Parent" then
 			obj[k] = v
@@ -662,6 +668,8 @@ function Util.Create(class, props, children)
 	if props and props.Parent then
 		obj.Parent = props.Parent
 	end
+
+	
 	return obj
 end
 
