@@ -15398,7 +15398,7 @@ function Xan:CreateWindow(config)
 				Position = UDim2.new(0.6, 0, 0, IsMobile and 8 or 6),
 				Size = UDim2.new(0.4, -14, 0, 20),
 				Font = Enum.Font.Roboto,
-				Text = Util.Round(value, 2) .. suffix,
+				Text = "<b>"..Util.Round(value, 2) .. suffix.."</b>",
 				TextColor3 = Xan.CurrentTheme.Accent,
 				TextSize = IsMobile and 14 or 13,
 				TextXAlignment = Enum.TextXAlignment.Right,
@@ -16062,8 +16062,8 @@ function Xan:CreateWindow(config)
 				BackgroundColor3 = Xan.CurrentTheme.BackgroundTertiary,
 				Position = UDim2.new(1, -100, 0.5, -14),
 				Size = UDim2.new(0, 86, 0, 28),
-				Font = Enum.Font.Code,
-				Text = getKeyName(currentKey),
+				Font = Enum.Font.RobotoMono,
+				Text = "<b>"..getKeyName(currentKey).."</b>",
 				TextColor3 = Xan.CurrentTheme.Text,
 				TextSize = IsMobile and 12 or 11,
 				AutoButtonColor = false,
@@ -20639,19 +20639,19 @@ function Xan:CreateWindow(config)
 			local badges = {}
 			local badgeOrder = 1
 			if isPopular then
-				badges.popular = createBadge("POPULAR", Color3.fromRGB(255, 165, 0), badgeOrder)
+				badges.popular = createBadge("<b>POPULAR</b>", Color3.fromRGB(255, 165, 0), badgeOrder)
 				badgeOrder = badgeOrder + 1
 			end
 			if isNew then
-				badges.new = createBadge("NEW", Color3.fromRGB(50, 205, 50), badgeOrder)
+				badges.new = createBadge("<b>NEW</b>", Color3.fromRGB(50, 205, 50), badgeOrder)
 				badgeOrder = badgeOrder + 1
 			end
 			if isUpdated then
-				badges.updated = createBadge("UPDATED", Color3.fromRGB(255, 140, 0), badgeOrder)
+				badges.updated = createBadge("<b>UPDATED</b>", Color3.fromRGB(255, 140, 0), badgeOrder)
 				badgeOrder = badgeOrder + 1
 			end
 			if isMaintenance then
-				badges.maintenance = createBadge("OFFLINE", Xan.CurrentTheme.Error, badgeOrder)
+				badges.maintenance = createBadge("<b>OFFLINE</b>", Xan.CurrentTheme.Error, badgeOrder)
 			end
 
 			task.defer(function()
@@ -20695,7 +20695,7 @@ function Xan:CreateWindow(config)
 				Position = UDim2.new(1, -82, 0.5, -16),
 				Size = UDim2.new(0, 70, 0, 32),
 				Font = Enum.Font.Roboto,
-				Text = isMaintenance and "Offline" or "Load",
+				Text = isMaintenance and "<b>OFFLINE</b>" or "<b>LOAD</b>",
 				TextColor3 = Color3.new(1, 1, 1),
 				TextSize = IsMobile and 13 or 12,
 				AutoButtonColor = false,
