@@ -664,6 +664,7 @@ function Util.Create(class, props, children)
 	end
 	for _, child in ipairs(children or {}) do
 		child.Parent = obj
+	
 	end
 	if props and props.Parent then
 		obj.Parent = props.Parent
