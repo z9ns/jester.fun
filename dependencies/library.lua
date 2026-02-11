@@ -15440,7 +15440,7 @@ function Xan:CreateWindow(config)
 				local percent = (value - min) / (max - min)
 				fill.Size = UDim2.new(percent, 0, 1, 0)
 				knob.Position = UDim2.new(percent, -8, 0.5, -8)
-				valueLabel.Text = "<b>" .. Util.Round(value, 2) .. suffix .. "</b>",
+				valueLabel.Text = "<b>" .. Util.Round(value, 2) .. suffix .. "</b>"
 
 				if not skipCallback then
 					callback(value)
@@ -15729,7 +15729,7 @@ function Xan:CreateWindow(config)
 				Position = UDim2.new(0.4, 0, 0, 0),
 				Size = UDim2.new(0.6, -40, 1, 0),
 				Font = Enum.Font.GothamMedium,
-				Text = "<b>" .. getDisplayText() .. "</b>",,
+				Text = "<b>" .. getDisplayText() .. "</b>",
 				TextColor3 = Xan.CurrentTheme.Accent,
 				TextSize = IsMobile and 14 or 13,
 				TextXAlignment = Enum.TextXAlignment.Right,
@@ -15830,7 +15830,7 @@ function Xan:CreateWindow(config)
 							Util.Tween(optionBtn, 0.2, { BackgroundColor3 = Xan.CurrentTheme.Accent, TextColor3 = contrastText })
 						end
 		
-						valueLabel.Text = Text = "<b>" .. getDisplayText() .. "</b>",,
+						valueLabel.Text = "<b>" .. getDisplayText() .. "</b>"
 						if flag then Xan:SetFlag(flag, selected) end
 						callback(selected)
 					end)
