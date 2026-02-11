@@ -11455,7 +11455,7 @@ function Xan:CreateWindow(config)
 				BackgroundTransparency = 0,
 			})
 			if tabData.Button:FindFirstChild("Label") then
-				Util.Tween(tabData.Button.Label, 0.2, { TextColor3 = Xan.CurrentTheme.Text, TextTransparency = 0 })
+				Util.Tween(tabData.Button.Label, 0.2, { TextColor3 = Xan.CurrentTheme.Accent, TextTransparency = 0 })
 			end
 			local iconEl = tabData.Button:FindFirstChild("Icon")
 			if iconEl then
@@ -11475,7 +11475,9 @@ function Xan:CreateWindow(config)
 				Util.Tween(stroke, 0.2, { Color = Xan.CurrentTheme.Accent, Transparency = 0.5 })
 			end
 			if tabData.Button:FindFirstChild("Label") then
-				Util.Tween(tabData.Button.Label, 0.2, { TextColor3 = Xan.CurrentTheme.Text, TextTransparency = 0 })
+				Util.Tween(tabData.Button.Label, 0.2, { TextColor3 = Xan.CurrentTheme.Accent, TextTransparency = 0 })
+				
+				
 			end
 			local iconEl = tabData.Button:FindFirstChild("Icon")
 			if iconEl then
