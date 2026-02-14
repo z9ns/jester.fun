@@ -313,6 +313,25 @@ runService.RenderStepped:Connect(function()
 			d.distance.Visible = false
 		end
 
+		-- TRACER
+		if params.tracer then
+			local mouse = game:GetService("UserInputService"):GetMouseLocation()
+			local from = Vector2.new(mouse.X, mouse.Y)
+			d.tracer.Visible = true
+			d.tracer.From = from
+			d.tracer.To = topLeft + Vector2.new(boxSize.X / 2, boxSize.Y / 2)
+
+			if params.outline then
+				d.tracerOutline.Visible = true
+				d.tracerOutline.From = from
+				d.tracerOutline.To = topLeft + Vector2.new(boxSize.X / 2, boxSize.Y / 2)
+			else
+				d.tracerOutline.Visible = false
+			end
+		else
+			d.tracer.Visible = false
+		end
+
 		-- HEALTHBAR
 		if params.healthBar and boxData.humanoid then
 			local humanoid = boxData.humanoid
