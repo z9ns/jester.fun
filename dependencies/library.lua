@@ -16152,6 +16152,13 @@ function Xan:CreateWindow(config)
 					end
 				end)
 				table.insert(Xan.Connections, releaseConn)
+
+				local focusLostConn = UserInputService.WindowFocusReleased:Connect(function()
+        Xan:RemoveFromBindList(name)
+        Util.SafeCall(callback, false)
+    end)
+
+    table.insert(Xan.Connections, focusLostConn)
 			end
 
 			keyBtn.MouseEnter:Connect(function()
